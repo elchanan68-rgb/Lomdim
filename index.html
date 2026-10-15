@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2eb">
+  <meta name="description" content="לימוד גמרא בצוותא — מסכת ברכות בספריא">
+  <title>לומדים בצוותא — מסכת ברכות</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Frank+Ruhl+Libre:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:light;--ink:#18332f;--green:#175b50;--muted:#61736e;--gold:#bd8d50;--paper:#f5f2eb}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;padding:24px;background:radial-gradient(ellipse at 15% 10%,#e6ece1 0,transparent 32%),radial-gradient(ellipse at 90% 90%,#e9e0d0 0,transparent 30%),var(--paper);font-family:Heebo,Arial,sans-serif;color:var(--ink);display:grid;place-items:center}
+    .landing{width:min(100%,960px);display:grid;grid-template-columns:1fr .86fr;align-items:center;gap:clamp(28px,6vw,72px);padding:clamp(20px,4vw,48px);background:#fffefaed;border:1px solid #18332f12;border-radius:30px;box-shadow:0 25px 75px #173b3214}
+    .poster{width:100%;height:auto;display:block;border-radius:17px;box-shadow:0 16px 36px #18332f20}
+    .content{padding:10px 0}.brand{display:inline-flex;align-items:center;gap:10px;color:var(--green);font-size:15px;font-weight:800}.brand-mark{width:38px;height:38px;border-radius:12px;background:var(--green);color:white;display:grid;place-items:center;font-family:'Frank Ruhl Libre',serif;font-size:24px}
+    h1{font-family:'Frank Ruhl Libre',serif;font-size:clamp(42px,6vw,66px);line-height:1.08;letter-spacing:-.035em;margin:30px 0 12px}h1 span{color:var(--green)}.description{font-size:18px;color:var(--muted);line-height:1.8;margin:0}.meeting{margin:25px 0 27px;padding:15px 17px;border-right:4px solid var(--gold);border-radius:12px;background:#f5f4ec}.meeting strong{display:block;font-size:17px;color:var(--green)}.meeting span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+    .picker{margin:0 0 14px}.picker-label{display:block;font-size:14px;font-weight:700;margin-bottom:8px}.picker-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.picker select{width:100%;min-width:0;height:52px;padding:0 12px;border:1px solid #dfe4db;border-radius:11px;background:#fff;color:var(--ink);font:inherit;font-size:16px;outline:none}.picker select:focus{border-color:#71978a;box-shadow:0 0 0 3px #175b5015}.picker select.last-read-select{border-color:#378263;background:#e4f2e9;color:#15583d;font-weight:700}
+    .view-picker{border:0;padding:0;margin:13px 0 0;min-width:0}.view-picker legend{font-size:14px;font-weight:700;margin-bottom:8px}.view-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.view-option{position:relative}.view-option input{position:absolute;opacity:0;inset:0;pointer-events:none}.view-option span{min-height:46px;padding:8px 10px;border:1px solid #dfe4db;border-radius:11px;background:#fff;color:var(--muted);display:flex;align-items:center;justify-content:center;text-align:center;font-size:14px;font-weight:600;cursor:pointer}.view-option input:checked+span{border-color:var(--green);background:var(--green2);color:var(--green);box-shadow:inset 0 0 0 1px var(--green)}.view-option input:focus-visible+span{outline:3px solid #bd8d50;outline-offset:2px}.view-hint{font-size:12px;color:var(--muted);line-height:1.5;margin:7px 2px 0}
+    .last-read{display:none;margin:-3px 0 13px;padding:9px 12px;border:1px solid #cce4d3;border-radius:10px;background:#e8f5ec;color:#15583d;font-size:13px;font-weight:700}.last-read.visible{display:flex;align-items:center;gap:7px}.last-read::before{content:"✓";width:20px;height:20px;display:grid;place-items:center;border-radius:50%;background:#2c8059;color:#fff;font-size:12px;flex:none}
+    .sefaria{min-height:58px;width:100%;padding:12px 20px;border-radius:14px;background:var(--green);color:white;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:11px;font-size:17px;font-weight:700;box-shadow:0 10px 25px #175b5030;transition:background .2s,transform .2s,box-shadow .2s}.sefaria:hover{background:#10483f;transform:translateY(-2px);box-shadow:0 14px 30px #175b503c}.sefaria:focus-visible{outline:3px solid var(--gold);outline-offset:4px}.arrow{font-size:21px;transition:transform .2s}.sefaria:hover .arrow{transform:translateX(-3px)}
+    .caption{text-align:center;color:#81908a;font-size:12px;margin:12px 0 0}
+    @media(max-width:700px){body{min-height:100vh;min-height:100svh;padding:env(safe-area-inset-top,14px) 14px env(safe-area-inset-bottom,14px);display:flex;align-items:flex-start;justify-content:center}.landing{width:100%;grid-template-columns:minmax(0,1fr);gap:20px;padding:clamp(14px,4vw,20px);border-radius:22px;max-width:470px;margin:auto 0}.content{order:1;padding:0 2px 3px}.poster{order:2;width:100%;max-height:38vh;max-height:38svh;object-fit:contain;object-position:center;border-radius:13px}.brand{font-size:14px}.brand-mark{width:36px;height:36px}h1{font-size:clamp(38px,11vw,48px);margin:17px 0 8px}.description{font-size:16px;line-height:1.65}.meeting{margin:15px 0 18px;padding:13px 14px}.meeting strong{font-size:16px}.picker-label{font-size:14px}.picker-fields{gap:8px}.picker select{height:54px;padding:0 10px;font-size:16px}.sefaria{min-height:58px;padding:12px 14px;font-size:16px}.caption{margin-top:9px}}
+    @media(max-width:360px){body{padding-left:10px;padding-right:10px}.landing{padding:13px;gap:16px}.picker-fields{grid-template-columns:1fr 1fr;gap:6px}.picker select{padding:0 7px;font-size:15px}.sefaria{font-size:15px;gap:7px}h1{font-size:38px}}
+    @media(max-height:500px) and (orientation:landscape){body{align-items:flex-start}.landing{margin:10px auto;grid-template-columns:minmax(0,1fr) minmax(180px,.8fr);gap:18px;padding:18px}.content{order:1}.poster{order:2;max-height:75vh}.meeting{margin:10px 0;padding:9px 12px}h1{font-size:38px;margin:12px 0 7px}.description{font-size:15px}.picker select{height:46px}.sefaria{min-height:48px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main class="landing">
+    <img class="poster" src="./gemara-background.jpeg" alt="מודעת חב״ד בצוותא — לימוד גמרא ביום רביעי בשעה 20:30">
+    <section class="content" aria-labelledby="title">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">ל</span><span>לומדים בצוותא</span></div>
+      <h1 id="title">פותחים דף.<br><span>לומדים ביחד.</span></h1>
+      <p class="description">הצטרפו ללימוד מסכת ברכות באתר ספריא — בנוחות, מכל טלפון.</p>
+      <div class="meeting"><strong>לימוד בצוותא — כל יום רביעי</strong><span>בשעה 20:30</span></div>
+      <div class="picker">
+        <label class="picker-label" for="daf">בחירת דף במסכת ברכות</label>
+        <div class="picker-fields">
+          <select id="daf" aria-label="בחירת מספר הדף"></select>
+          <select id="amud" aria-label="בחירת עמוד"><option value="a">עמוד א׳</option><option value="b">עמוד ב׳</option></select>
+        </div>
+        <fieldset class="view-picker">
+          <legend>לאן לפתוח את הדף?</legend>
+          <div class="view-options">
+            <label class="view-option"><input type="radio" name="dafView" value="sefaria" checked><span>ספריא · טקסט רגיל</span></label>
+            <label class="view-option"><input type="radio" name="dafView" value="dafyomi"><span>צורת הדף · פורטל הדף היומי</span></label>
+          </div>
+          <p class="view-hint" id="viewHint">הבחירה תפתח את הדף שבחרתם באתר המתאים.</p>
+        </fieldset>
+      </div>
+      <div class="last-read" id="lastRead" aria-live="polite"></div>
+      <a class="sefaria" id="sefariaLink" href="https://www.sefaria.org.il/Berakhot.2a" target="_blank" rel="noopener noreferrer">פתיחת דף ב׳ עמוד א׳ בספריא <span class="arrow" aria-hidden="true">←</span></a>
+      <p class="caption" id="linkCaption">הדף ייפתח באתר שבחרתם</p>
+    </section>
+  </main>
+  <script>
+    (() => {
+      const daf = document.querySelector('#daf');
+      const amud = document.querySelector('#amud');
+      const siteInputs = [...document.querySelectorAll('input[name="dafView"]')];
+      const link = document.querySelector('#sefariaLink');
+      const linkCaption = document.querySelector('#linkCaption');
+      const lastReadBadge = document.querySelector('#lastRead');
+      const storageKey = 'lomdim-last-read-v1';
+      function hebrewNumber(number) {
+        if (number === 15) return 'ט״ו';
+        if (number === 16) return 'ט״ז';
+        const values = [[400, 'ת'], [300, 'ש'], [200, 'ר'], [100, 'ק'], [90, 'צ'], [80, 'פ'], [70, 'ע'], [60, 'ס'], [50, 'נ'], [40, 'מ'], [30, 'ל'], [20, 'כ'], [10, 'י'], [9, 'ט'], [8, 'ח'], [7, 'ז'], [6, 'ו'], [5, 'ה'], [4, 'ד'], [3, 'ג'], [2, 'ב'], [1, 'א']];
+        let remainder = number;
+        let letters = '';
+        for (const [value, letter] of values) {
+          while (remainder >= value) { letters += letter; remainder -= value; }
+        }
+        return letters.length === 1 ? `${letters}׳` : `${letters.slice(0, -1)}״${letters.slice(-1)}`;
+      }
+      for (let number = 2; number <= 64; number += 1) {
+        const option = document.createElement('option');
+        option.value = number;
+        option.textContent = `דף ${hebrewNumber(number)}`;
+        daf.append(option);
+      }
+      let lastRead = null;
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey) || 'null');
+        if (saved && Number.isInteger(saved.daf) && saved.daf >= 2 && saved.daf <= 64 && ['a', 'b'].includes(saved.amud)) lastRead = saved;
+      } catch {}
+      if (lastRead) { daf.value = String(lastRead.daf); amud.value = lastRead.amud; }
+      try {
+        const savedSite = localStorage.getItem('lomdim-destination-v1');
+        if (['sefaria', 'dafyomi'].includes(savedSite)) siteInputs.find(input => input.value === savedSite).checked = true;
+      } catch {}
+      function renderLastRead() {
+        const isLastRead = lastRead && Number(daf.value) === lastRead.daf && amud.value === lastRead.amud;
+        daf.classList.toggle('last-read-select', Boolean(isLastRead));
+        amud.classList.toggle('last-read-select', Boolean(isLastRead));
+        lastReadBadge.classList.toggle('visible', Boolean(lastRead));
+        lastReadBadge.textContent = lastRead ? `הדף האחרון שנלמד: ${hebrewNumber(lastRead.daf)} · עמוד ${lastRead.amud === 'a' ? 'א׳' : 'ב׳'}` : '';
+      }
+      function updateLink() {
+        const side = amud.value;
+        const site = siteInputs.find(input => input.checked).value;
+        const refUrl = `https://www.sefaria.org.il/Berakhot.${daf.value}${side}`;
+        if (site === 'dafyomi') {
+          const pageId = (Number(daf.value) - 2) * 2 + (side === 'a' ? 1 : 2);
+          link.href = `https://daf-yomi.com/DafYomi_Page.aspx?vt=1&id=${pageId}`;
+          link.firstChild.textContent = `פתיחת דף ${hebrewNumber(Number(daf.value))} עמוד ${side === 'a' ? 'א׳' : 'ב׳'} בצורת הדף `;
+        } else {
+          link.href = refUrl;
+          link.firstChild.textContent = `פתיחת דף ${hebrewNumber(Number(daf.value))} עמוד ${side === 'a' ? 'א׳' : 'ב׳'} בספריא `;
+        }
+        linkCaption.textContent = site === 'dafyomi' ? 'הדף ייפתח בצורת הדף בפורטל הדף היומי' : 'הדף ייפתח באתר ספריא';
+        renderLastRead();
+      }
+      link.addEventListener('click', () => {
+        lastRead = { daf: Number(daf.value), amud: amud.value };
+        try { localStorage.setItem(storageKey, JSON.stringify(lastRead)); } catch {}
+        renderLastRead();
+      });
+      daf.addEventListener('change', updateLink);
+      amud.addEventListener('change', updateLink);
+      siteInputs.forEach(input => input.addEventListener('change', () => {
+        try { localStorage.setItem('lomdim-destination-v1', input.value); } catch {}
+        updateLink();
+      }));
+      updateLink();
+    })();
+  </script>
+</body>
+</html>
