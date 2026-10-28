@@ -2,131 +2,665 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f5f2eb">
-  <meta name="description" content="לימוד גמרא בצוותא — מסכת ברכות בספריא">
-  <title>לומדים בצוותא — מסכת ברכות</title>
+  <meta name="description" content="לימוד גמרא בצוותא — מסכת מכות, כל יום רביעי ב־20:30. בוחרים דף ופותחים בספריא או בצורת הדף.">
+  <meta property="og:title" content="לומדים בצוותא — מסכת מכות">
+  <meta property="og:description" content="לימוד גמרא כל יום רביעי ב־20:30 בבית כנסת חב״ד בצוותא. בוחרים דף ופותחים.">
+  <meta property="og:image" content="./gemara-background.jpeg">
+  <meta property="og:locale" content="he_IL">
+  <title>לומדים בצוותא — מסכת מכות</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Frank+Ruhl+Libre:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{color-scheme:light;--ink:#18332f;--green:#175b50;--green2:#e4eee8;--muted:#61736e;--gold:#bd8d50;--paper:#f5f2eb}
-    *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;padding:24px;background:radial-gradient(ellipse at 15% 10%,#e6ece1 0,transparent 32%),radial-gradient(ellipse at 90% 90%,#e9e0d0 0,transparent 30%),var(--paper);font-family:Heebo,Arial,sans-serif;color:var(--ink);display:grid;place-items:center}
-    .landing{width:min(100%,960px);display:grid;grid-template-columns:1fr .86fr;align-items:center;gap:clamp(28px,6vw,72px);padding:clamp(20px,4vw,48px);background:#fffefaed;border:1px solid #18332f12;border-radius:30px;box-shadow:0 25px 75px #173b3214}
-    .poster{width:100%;height:auto;display:block;border-radius:17px;box-shadow:0 16px 36px #18332f20}
-    .content{padding:10px 0}.brand{display:inline-flex;align-items:center;gap:10px;color:var(--green);font-size:15px;font-weight:800}.brand-mark{width:38px;height:38px;border-radius:12px;background:var(--green);color:white;display:grid;place-items:center;font-family:'Frank Ruhl Libre',serif;font-size:24px}
-    h1{font-family:'Frank Ruhl Libre',serif;font-size:clamp(42px,6vw,66px);line-height:1.08;letter-spacing:-.035em;margin:30px 0 12px}h1 span{color:var(--green)}.description{font-size:18px;color:var(--muted);line-height:1.8;margin:0}.meeting{margin:25px 0 27px;padding:15px 17px;border-right:4px solid var(--gold);border-radius:12px;background:#f5f4ec}.meeting strong{display:block;font-size:17px;color:var(--green)}.meeting span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
-    .picker{margin:0 0 14px}.picker-label{display:block;font-size:14px;font-weight:700;margin-bottom:8px}.picker-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.picker select{width:100%;min-width:0;height:52px;padding:0 12px;border:1px solid #dfe4db;border-radius:11px;background:#fff;color:var(--ink);font:inherit;font-size:16px;outline:none}.picker select:focus{border-color:#71978a;box-shadow:0 0 0 3px #175b5015}.picker select.last-read-select{border-color:#378263;background:#e4f2e9;color:#15583d;font-weight:700}
-    .view-picker{border:0;padding:0;margin:13px 0 0;min-width:0}.view-picker legend{font-size:14px;font-weight:700;margin-bottom:8px}.view-options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.view-option{position:relative}.view-option input{position:absolute;opacity:0;inset:0;pointer-events:none}.view-option span{min-height:46px;padding:8px 10px;border:1px solid #dfe4db;border-radius:11px;background:#fff;color:var(--muted);display:flex;align-items:center;justify-content:center;text-align:center;font-size:14px;font-weight:600;cursor:pointer}.view-option input:checked+span{border-color:var(--green);background:var(--green2);color:var(--green);box-shadow:inset 0 0 0 1px var(--green)}.view-option input:focus-visible+span{outline:3px solid #bd8d50;outline-offset:2px}.view-hint{font-size:12px;color:var(--muted);line-height:1.5;margin:7px 2px 0}
-    .last-read{display:none;margin:-3px 0 13px;padding:9px 12px;border:1px solid #cce4d3;border-radius:10px;background:#e8f5ec;color:#15583d;font-size:13px;font-weight:700}.last-read.visible{display:flex;align-items:center;gap:7px}.last-read::before{content:"✓";width:20px;height:20px;display:grid;place-items:center;border-radius:50%;background:#2c8059;color:#fff;font-size:12px;flex:none}
-    .sefaria{min-height:58px;width:100%;padding:12px 20px;border-radius:14px;background:var(--green);color:white;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:11px;font-size:17px;font-weight:700;box-shadow:0 10px 25px #175b5030;transition:background .2s,transform .2s,box-shadow .2s}.sefaria:hover{background:#10483f;transform:translateY(-2px);box-shadow:0 14px 30px #175b503c}.sefaria:focus-visible{outline:3px solid var(--gold);outline-offset:4px}.arrow{font-size:21px;transition:transform .2s}.sefaria:hover .arrow{transform:translateX(-3px)}
-    .caption{text-align:center;color:#81908a;font-size:12px;margin:12px 0 0}
-    @media(max-width:700px){body{min-height:100vh;min-height:100svh;padding:env(safe-area-inset-top,14px) 14px env(safe-area-inset-bottom,14px);display:flex;align-items:flex-start;justify-content:center}.landing{width:100%;grid-template-columns:minmax(0,1fr);gap:20px;padding:clamp(14px,4vw,20px);border-radius:22px;max-width:470px;margin:auto 0}.content{order:1;padding:0 2px 3px}.poster{order:2;width:100%;max-height:38vh;max-height:38svh;object-fit:contain;object-position:center;border-radius:13px}.brand{font-size:14px}.brand-mark{width:36px;height:36px}h1{font-size:clamp(38px,11vw,48px);margin:17px 0 8px}.description{font-size:16px;line-height:1.65}.meeting{margin:15px 0 18px;padding:13px 14px}.meeting strong{font-size:16px}.picker-label{font-size:14px}.picker-fields{gap:8px}.picker select{height:54px;padding:0 10px;font-size:16px}.sefaria{min-height:58px;padding:12px 14px;font-size:16px}.caption{margin-top:9px}}
-    @media(max-width:360px){body{padding-left:10px;padding-right:10px}.landing{padding:13px;gap:16px}.picker-fields{grid-template-columns:1fr 1fr;gap:6px}.picker select{padding:0 7px;font-size:15px}.sefaria{font-size:15px;gap:7px}h1{font-size:38px}}
-    @media(max-height:500px) and (orientation:landscape){body{align-items:flex-start}.landing{margin:10px auto;grid-template-columns:minmax(0,1fr) minmax(180px,.8fr);gap:18px;padding:18px}.content{order:1}.poster{order:2;max-height:75vh}.meeting{margin:10px 0;padding:9px 12px}h1{font-size:38px;margin:12px 0 7px}.description{font-size:15px}.picker select{height:46px}.sefaria{min-height:48px}}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
-  </style>
+/* ==========================================================================
+   לומדים בצוותא — מסכת מכות
+   1. טוקנים  2. בסיס  3. מבנה  4. תוכן  5. טופס  6. רכיבים  7. רספונסיבי
+   ========================================================================== */
+
+/* 1. טוקנים ---------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+  --ink: #18332f;
+  --green: #175b50;
+  --green-dark: #10483f;
+  --green-soft: #e4eee8;
+  --muted: #5b6d68;
+  --faint: #81908a;
+  --gold: #bd8d50;
+  --paper: #f5f2eb;
+  --card: #fffefaed;
+  --line: #dfe4db;
+  --done: #378263;
+  --done-bg: #e4f2e9;
+  --done-ink: #15583d;
+  --maroon: #6b1f2e; /* גוון מהמודעה */
+
+  --font-body: Heebo, Arial, sans-serif;
+  --font-display: 'Frank Ruhl Libre', serif;
+  --radius-lg: 30px;
+  --radius-md: 14px;
+  --radius-sm: 11px;
+}
+
+/* 2. בסיס ------------------------------------------------------------------ */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 15% 10%, #e6ece1 0, transparent 32%),
+    radial-gradient(ellipse at 90% 90%, #e9e0d0 0, transparent 30%),
+    var(--paper);
+}
+
+button, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+[hidden] { display: none !important; }
+
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+/* 3. מבנה ------------------------------------------------------------------ */
+.landing {
+  width: min(100%, 1000px);
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+  align-items: start;
+  gap: clamp(28px, 5vw, 64px);
+  padding: clamp(20px, 4vw, 48px);
+  background: var(--card);
+  border: 1px solid #18332f12;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 75px #173b3214;
+}
+
+.poster-wrap { margin: 0; position: sticky; top: 24px; align-self: start; }
+.poster {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 17px;
+  box-shadow: 0 16px 36px #18332f20;
+}
+
+.content { padding: 6px 0; min-width: 0; }
+
+/* 4. תוכן ------------------------------------------------------------------ */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--green);
+  font-size: 15px;
+  font-weight: 800;
+}
+.brand-mark {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: var(--green);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 24px;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 6vw, 62px);
+  line-height: 1.08;
+  letter-spacing: -.035em;
+  margin: 26px 0 12px;
+}
+h1 span { color: var(--green); }
+
+.description { font-size: 18px; color: var(--muted); line-height: 1.7; margin: 0; }
+
+.meeting {
+  margin: 22px 0 24px;
+  padding: 15px 17px;
+  border-right: 4px solid var(--gold);
+  border-radius: 12px;
+  background: #f5f4ec;
+}
+.meeting > strong { display: block; font-size: 17px; color: var(--green); }
+.meeting > span { display: block; color: var(--muted); font-size: 14px; margin-top: 3px; }
+.meeting-extra {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 6px 14px; margin-top: 10px; padding-top: 10px;
+  border-top: 1px solid #18332f14;
+}
+.countdown { font-size: 14px; font-weight: 700; color: var(--maroon); }
+
+/* 5. טופס ------------------------------------------------------------------ */
+.picker { margin: 0 0 14px; }
+.picker-label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+.picker-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.picker select {
+  width: 100%; min-width: 0; height: 52px; padding: 0 12px;
+  border: 1px solid var(--line); border-radius: var(--radius-sm);
+  background: #fff; font-size: 16px; outline: none;
+}
+.picker select:focus { border-color: #71978a; box-shadow: 0 0 0 3px #175b5015; }
+.picker select.last-read-select { border-color: var(--done); background: var(--done-bg); color: var(--done-ink); font-weight: 700; }
+
+.stepper { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+.step {
+  height: 40px; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  background: #fff; color: var(--muted); font-size: 14px; font-weight: 600;
+  transition: border-color .15s, color .15s;
+}
+.step:hover:not(:disabled) { border-color: var(--green); color: var(--green); }
+.step:disabled { opacity: .45; cursor: default; }
+
+.chapters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip {
+  flex: 1 1 auto; padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px;
+  background: #fff; color: var(--muted); font-size: 13px; font-weight: 600; text-align: center;
+  line-height: 1.35; transition: border-color .15s, background .15s, color .15s;
+}
+.chip small { display: block; font-size: 11px; font-weight: 500; color: var(--faint); }
+.chip:hover { border-color: var(--green); }
+.chip[aria-pressed="true"] { border-color: var(--green); background: var(--green-soft); color: var(--green); box-shadow: inset 0 0 0 1px var(--green); }
+
+.view-picker { border: 0; padding: 0; margin: 14px 0 0; min-width: 0; }
+.view-picker legend { font-size: 14px; font-weight: 700; margin-bottom: 8px; padding: 0; }
+.view-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.view-option { position: relative; }
+.view-option input { position: absolute; opacity: 0; inset: 0; pointer-events: none; }
+.view-option span {
+  min-height: 46px; padding: 8px 10px; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  background: #fff; color: var(--muted); display: flex; align-items: center; justify-content: center;
+  text-align: center; font-size: 14px; font-weight: 600; cursor: pointer;
+}
+.view-option input:checked + span { border-color: var(--green); background: var(--green-soft); color: var(--green); box-shadow: inset 0 0 0 1px var(--green); }
+.view-option input:focus-visible + span { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+/* 6. רכיבים ---------------------------------------------------------------- */
+.progress { margin: 0 0 12px; }
+.progress-head { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+.bar { height: 8px; border-radius: 99px; background: #e7e9df; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, var(--green), var(--done)); transition: width .4s ease; }
+
+.last-read {
+  display: none; margin: 0 0 13px; padding: 9px 12px;
+  border: 1px solid #cce4d3; border-radius: 10px; background: #e8f5ec;
+  color: var(--done-ink); font-size: 13px; font-weight: 700;
+}
+.last-read.visible { display: flex; align-items: center; gap: 7px; }
+.last-read::before {
+  content: "✓"; flex: none; width: 20px; height: 20px; display: grid; place-items: center;
+  border-radius: 50%; background: #2c8059; color: #fff; font-size: 12px;
+}
+
+.cta {
+  min-height: 58px; width: 100%; padding: 12px 20px; border-radius: var(--radius-md);
+  background: var(--green); color: #fff; text-decoration: none;
+  display: flex; align-items: center; justify-content: center; gap: 11px;
+  font-size: 17px; font-weight: 700; box-shadow: 0 10px 25px #175b5030;
+  transition: background .2s, transform .2s, box-shadow .2s;
+}
+.cta:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 14px 30px #175b503c; }
+.arrow { font-size: 21px; transition: transform .2s; }
+.cta:hover .arrow { transform: translateX(-3px); }
+
+.caption { text-align: center; color: var(--faint); font-size: 12px; margin: 12px 0 0; min-height: 1.4em; }
+.actions { display: flex; justify-content: center; margin-top: 4px; }
+
+.text-link {
+  border: 0; background: none; padding: 4px 2px; color: var(--green);
+  font-size: 13px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px;
+}
+.text-link:hover { color: var(--green-dark); }
+
+.fact {
+  margin-top: 26px; padding: 18px 18px 16px;
+  border: 1px solid #18332f14; border-radius: 18px; background: #fff;
+}
+.fact-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.fact h2 { margin: 0; font-size: 13px; font-weight: 700; color: var(--faint); }
+.fact h3 { font-family: var(--font-display); font-size: 22px; line-height: 1.25; margin: 10px 0 6px; color: var(--green); }
+.fact p { margin: 0; color: var(--ink); line-height: 1.75; font-size: 15px; }
+.fact .fact-ref { margin-top: 8px; font-size: 12px; color: var(--faint); }
+.fact.swap h3, .fact.swap #factBody, .fact.swap .fact-ref { animation: fade .35s ease; }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* 7. רספונסיבי ------------------------------------------------------------- */
+@media (max-width: 760px) {
+  body { padding: calc(env(safe-area-inset-top, 0px) + 14px) 14px calc(env(safe-area-inset-bottom, 0px) + 14px); display: flex; align-items: flex-start; justify-content: center; }
+  .landing { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: clamp(14px, 4vw, 20px); border-radius: 22px; max-width: 480px; margin: auto 0; }
+  .content { order: 1; padding: 0 2px 3px; }
+  .poster-wrap { order: 2; position: static; }
+  .poster { max-height: 40svh; object-fit: contain; border-radius: 13px; }
+  h1 { font-size: clamp(38px, 11vw, 48px); margin: 17px 0 8px; }
+  .description { font-size: 16px; }
+  .meeting { margin: 15px 0 18px; padding: 13px 14px; }
+  .picker select { height: 54px; }
+}
+
+@media (max-width: 360px) {
+  body { padding-left: 10px; padding-right: 10px; }
+  .landing { padding: 13px; gap: 16px; }
+  .picker-fields { gap: 6px; }
+  .picker select { padding: 0 7px; font-size: 15px; }
+  .cta { font-size: 15px; gap: 7px; }
+  h1 { font-size: 38px; }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  body { align-items: flex-start; }
+  .landing { margin: 10px auto; grid-template-columns: minmax(0, 1fr) minmax(180px, .8fr); gap: 18px; padding: 18px; }
+  .poster-wrap { order: 2; }
+  .poster { max-height: 75vh; object-fit: contain; }
+  h1 { font-size: 38px; margin: 12px 0 7px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+
+</style>
 </head>
 <body>
   <main class="landing">
-    <img class="poster" src="./gemara-background.jpeg" alt="מודעת חב״ד בצוותא — לימוד גמרא ביום רביעי בשעה 20:30">
+
+    <figure class="poster-wrap">
+      <img class="poster" src="./gemara-background.jpeg" width="1080" height="1080"
+           alt="מודעת חב״ד בצוותא — שיעור גמרא כל יום רביעי בשעה 20:30, בית כנסת חב״ד בצוותא, רח׳ יחד 16">
+    </figure>
+
     <section class="content" aria-labelledby="title">
+
       <div class="brand"><span class="brand-mark" aria-hidden="true">ל</span><span>לומדים בצוותא</span></div>
       <h1 id="title">פותחים דף.<br><span>לומדים ביחד.</span></h1>
-      <p class="description">הצטרפו ללימוד מסכת ברכות באתר ספריא — בנוחות, מכל טלפון.</p>
-      <div class="meeting"><strong>לימוד בצוותא — כל יום רביעי</strong><span>בשעה 20:30</span></div>
+      <p class="description">מסכת מכות — בוחרים דף, פותחים, ומצטרפים מכל טלפון.</p>
+
+      <!-- מועד השיעור -->
+      <div class="meeting">
+        <strong>לימוד בצוותא — כל יום רביעי בשעה 20:30</strong>
+        <span>בית כנסת חב״ד בצוותא · רח׳ יחד 16</span>
+        <div class="meeting-extra">
+          <span class="countdown" id="countdown" aria-live="polite"></span>
+          <a class="text-link" id="calendarLink" href="#" target="_blank" rel="noopener noreferrer">הוספה ליומן</a>
+        </div>
+      </div>
+
+      <!-- בחירת דף -->
       <div class="picker">
-        <label class="picker-label" for="daf">בחירת דף במסכת ברכות</label>
+        <label class="picker-label" for="daf">בחירת דף במסכת מכות</label>
         <div class="picker-fields">
           <select id="daf" aria-label="בחירת מספר הדף"></select>
-          <select id="amud" aria-label="בחירת עמוד"><option value="a">עמוד א׳</option><option value="b">עמוד ב׳</option></select>
+          <select id="amud" aria-label="בחירת עמוד">
+            <option value="a">עמוד א׳</option>
+            <option value="b">עמוד ב׳</option>
+          </select>
         </div>
+
+        <div class="stepper">
+          <button type="button" class="step" id="prevBtn">העמוד הקודם</button>
+          <button type="button" class="step" id="nextBtn">העמוד הבא</button>
+        </div>
+
+        <div class="chapters" id="chapters" role="group" aria-label="קפיצה לפרק"></div>
+
         <fieldset class="view-picker">
           <legend>לאן לפתוח את הדף?</legend>
           <div class="view-options">
             <label class="view-option"><input type="radio" name="dafView" value="sefaria" checked><span>ספריא · טקסט רגיל</span></label>
             <label class="view-option"><input type="radio" name="dafView" value="dafyomi"><span>צורת הדף · פורטל הדף היומי</span></label>
           </div>
-          <p class="view-hint" id="viewHint">הבחירה תפתח את הדף שבחרתם באתר המתאים.</p>
         </fieldset>
       </div>
+
+      <!-- התקדמות -->
+      <div class="progress" id="progress" hidden>
+        <div class="progress-head">
+          <span id="progressText"></span>
+          <button type="button" class="text-link" id="resetBtn">איפוס</button>
+        </div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="התקדמות במסכת" id="bar"><i id="barFill"></i></div>
+      </div>
+
       <div class="last-read" id="lastRead" aria-live="polite"></div>
-      <a class="sefaria" id="sefariaLink" href="https://www.sefaria.org.il/Berakhot.2a" target="_blank" rel="noopener noreferrer">פתיחת דף ב׳ עמוד א׳ בספריא <span class="arrow" aria-hidden="true">←</span></a>
+
+      <a class="cta" id="openLink" href="https://www.sefaria.org.il/Makkot.2a" target="_blank" rel="noopener noreferrer">
+        <span id="ctaLabel">פתיחת דף ב׳ עמוד א׳ בספריא</span>
+        <span class="arrow" aria-hidden="true">←</span>
+      </a>
       <p class="caption" id="linkCaption">הדף ייפתח באתר שבחרתם</p>
+      <div class="actions">
+        <button type="button" class="text-link" id="shareBtn">שיתוף הדף הזה</button>
+      </div>
+
+      <!-- פנינים על המסכת -->
+      <aside class="fact" aria-labelledby="factTitle">
+        <div class="fact-head">
+          <h2 id="factTitle">פנינים ממסכת מכות</h2>
+          <button type="button" class="text-link" id="factBtn">פנינה נוספת</button>
+        </div>
+        <h3 id="factHeading"></h3>
+        <p id="factBody"></p>
+        <p class="fact-ref" id="factRef"></p>
+      </aside>
+
     </section>
   </main>
   <script>
-    (() => {
-      const daf = document.querySelector('#daf');
-      const amud = document.querySelector('#amud');
-      const siteInputs = [...document.querySelectorAll('input[name="dafView"]')];
-      const link = document.querySelector('#sefariaLink');
-      const linkCaption = document.querySelector('#linkCaption');
-      const lastReadBadge = document.querySelector('#lastRead');
-      const storageKey = 'lomdim-last-read-v1';
-      function hebrewNumber(number) {
-        if (number === 15) return 'ט״ו';
-        if (number === 16) return 'ט״ז';
-        const values = [[400, 'ת'], [300, 'ש'], [200, 'ר'], [100, 'ק'], [90, 'צ'], [80, 'פ'], [70, 'ע'], [60, 'ס'], [50, 'נ'], [40, 'מ'], [30, 'ל'], [20, 'כ'], [10, 'י'], [9, 'ט'], [8, 'ח'], [7, 'ז'], [6, 'ו'], [5, 'ה'], [4, 'ד'], [3, 'ג'], [2, 'ב'], [1, 'א']];
-        let remainder = number;
-        let letters = '';
-        for (const [value, letter] of values) {
-          while (remainder >= value) { letters += letter; remainder -= value; }
-        }
-        return letters.length === 1 ? `${letters}׳` : `${letters.slice(0, -1)}״${letters.slice(-1)}`;
-      }
-      for (let number = 2; number <= 64; number += 1) {
-        const option = document.createElement('option');
-        option.value = number;
-        option.textContent = `דף ${hebrewNumber(number)}`;
-        daf.append(option);
-      }
-      let lastRead = null;
-      try {
-        const saved = JSON.parse(localStorage.getItem(storageKey) || 'null');
-        if (saved && Number.isInteger(saved.daf) && saved.daf >= 2 && saved.daf <= 64 && ['a', 'b'].includes(saved.amud)) lastRead = saved;
-      } catch {}
-      if (lastRead) { daf.value = String(lastRead.daf); amud.value = lastRead.amud; }
-      try {
-        const savedSite = localStorage.getItem('lomdim-destination-v1');
-        if (['sefaria', 'dafyomi'].includes(savedSite)) siteInputs.find(input => input.value === savedSite).checked = true;
-      } catch {}
-      function renderLastRead() {
-        const isLastRead = lastRead && Number(daf.value) === lastRead.daf && amud.value === lastRead.amud;
-        daf.classList.toggle('last-read-select', Boolean(isLastRead));
-        amud.classList.toggle('last-read-select', Boolean(isLastRead));
-        lastReadBadge.classList.toggle('visible', Boolean(lastRead));
-        lastReadBadge.textContent = lastRead ? `הדף האחרון שנפתח: ${hebrewNumber(lastRead.daf)} · עמוד ${lastRead.amud === 'a' ? 'א׳' : 'ב׳'}` : '';
-      }
-      function updateLink() {
-        const side = amud.value;
-        const site = siteInputs.find(input => input.checked).value;
-        const refUrl = `https://www.sefaria.org.il/Berakhot.${daf.value}${side}`;
-        if (site === 'dafyomi') {
-          const pageId = (Number(daf.value) - 2) * 2 + (side === 'a' ? 1 : 2);
-          link.href = `https://daf-yomi.com/DafYomi_Page.aspx?vt=1&id=${pageId}`;
-          link.firstChild.textContent = `פתיחת דף ${hebrewNumber(Number(daf.value))} עמוד ${side === 'a' ? 'א׳' : 'ב׳'} בצורת הדף `;
-        } else {
-          link.href = refUrl;
-          link.firstChild.textContent = `פתיחת דף ${hebrewNumber(Number(daf.value))} עמוד ${side === 'a' ? 'א׳' : 'ב׳'} בספריא `;
-        }
-        linkCaption.textContent = site === 'dafyomi' ? 'הדף ייפתח בצורת הדף בפורטל הדף היומי' : 'הדף ייפתח באתר ספריא';
-        renderLastRead();
-      }
-      link.addEventListener('click', () => {
-        lastRead = { daf: Number(daf.value), amud: amud.value };
-        try { localStorage.setItem(storageKey, JSON.stringify(lastRead)); } catch {}
-        renderLastRead();
-      });
-      daf.addEventListener('change', updateLink);
-      amud.addEventListener('change', updateLink);
-      siteInputs.forEach(input => input.addEventListener('change', () => {
-        try { localStorage.setItem('lomdim-destination-v1', input.value); } catch {}
-        updateLink();
-      }));
-      updateLink();
-    })();
-  </script>
+/* ==========================================================================
+   לומדים בצוותא — מסכת מכות
+   כל מה שקשור למסכת ולמפגש נמצא ב־CONFIG ו־FACTS. כדי לעבור למסכת אחרת
+   מחליפים אותם בלבד.
+   ========================================================================== */
+(() => {
+  'use strict';
+
+  /* ---------- תצורה ---------- */
+  const CONFIG = {
+    tractate: {
+      he: 'מכות',
+      sefaria: 'Makkot',          // מזהה ב־sefaria.org.il
+      dafyomiMassechet: 307,      // מזהה המסכת בפורטל הדף היומי
+      firstDaf: 2,
+      lastDaf: 24                 // המסכת מסתיימת בדף כ״ד ע״ב
+    },
+    // גבולות הפרקים — לוודא מול הדפוס אם משנים
+    chapters: [
+      { name: 'פרק א׳', title: 'כיצד העדים', daf: 2,  amud: 'a' },
+      { name: 'פרק ב׳', title: 'אלו הן הגולין', daf: 7,  amud: 'a' },
+      { name: 'פרק ג׳', title: 'אלו הן הלוקין', daf: 13, amud: 'b' }
+    ],
+    meeting: {
+      weekday: 3,                 // 0 = ראשון ... 3 = רביעי
+      hour: 20, minute: 30, durationMin: 60,
+      title: 'לימוד גמרא בצוותא — מסכת מכות',
+      place: 'בית כנסת חב״ד בצוותא, רח׳ יחד 16',
+      timezone: 'Asia/Jerusalem'
+    },
+    keys: {
+      lastRead: 'lomdim-makkot-last-read-v1',
+      read: 'lomdim-makkot-read-v1',
+      site: 'lomdim-destination-v1'
+    },
+    sefariaBase: 'https://www.sefaria.org.il/',
+    dafyomiBase: 'https://daf-yomi.com/Dafyomi_Page.aspx'
+  };
+
+  /* ---------- פנינים על המסכת ---------- */
+  const FACTS = [
+    { h: 'שש מאות ושלוש עשרה מצוות',
+      b: 'בסוף המסכת מובאת דרשת רבי שמלאי: תרי״ג מצוות נאמרו למשה בסיני. דוד המלך כלל אותן באחת־עשרה, ישעיהו בשש, מיכה בשלוש — עשות משפט, אהבת חסד והצנע לכת — ולבסוף בא חבקוק והעמידן על אחת.',
+      r: 'מכות כג ע״ב – כד ע״א' },
+    { h: '״וצדיק באמונתו יחיה״',
+      b: 'המשפט שאליו מצטמצמות כל המצוות לפי חבקוק. מסכת שעוסקת בעונשים נחתמת בשיעור על עיקרי החיים: משפט, חסד, צניעות ואמונה.',
+      r: 'מכות כד ע״א' },
+    { h: 'מכות — ולא מלקות',
+      b: 'המסכת עוסקת בעדים זוממין, בערי מקלט ובמלקות, ושמה נלקח מהמלקות שבפרק האחרון. לפי המשנה אין מכים יותר מארבעים, ובפועל נותנים ארבעים חסר אחת, כדי שלא לעבור על האיסור בטעות.',
+      r: 'מכות כב ע״א' },
+    { h: 'כאשר זמם — ולא כאשר עשה',
+      b: 'עדים שהוזמו מקבלים את העונש שביקשו להטיל על חברם, ולא את עונש המעשה שהעידו עליו. הדין נלמד מהפסוק ״ועשיתם לו כאשר זמם לעשות לאחיו״ ומשאיר אחריו את ״ובערת הרע מקרבך״.',
+      r: 'מכות ב ע״א ואילך' },
+    { h: 'שש ערי מקלט',
+      b: 'הורג בשוגג גולה לעיר מקלט: שלוש בעבר הירדן ושלוש בארץ כנען. הדרכים אליהן היו מתוקנות ומסומנות, וכתוב עליהן ״מקלט, מקלט״ כדי שהנמלט לא יתעכב.',
+      r: 'משנה מכות ב ה · מכות י ע״ב' },
+    { h: 'אמהות הכהן הגדול',
+      b: 'הגולה נשאר בעיר המקלט עד מות הכהן הגדול. אמהות הכהנים הגדולים היו שולחות לגולים אוכל ובגדים כדי שלא יתפללו על מות בנן. העיקרון: מי שאפשר היה למנוע ולא מנע — נושא באחריות.',
+      r: 'מכות יא ע״א' },
+    { h: 'רצה הקדוש ברוך הוא לזכות את ישראל',
+      b: 'המשנה האחרונה במסכת, בשם רבי חנניה בן עקשיה: משום כך הרבה להם תורה ומצוות. כל מצווה נוספת היא עוד הזדמנות לזכות. בדרך כלל אומרים אותה גם בסיומי מסכתות.',
+      r: 'משנה, מכות ג טז' },
+    { h: 'השועל בקודש הקודשים',
+      b: 'בדף האחרון נוסעים חכמים לירושלים ורואים שועל יוצא ממקום קודש הקודשים. הם בוכים, ורבי עקיבא צוחק, כי התגשמות נבואת החורבן מבטיחה גם את התגשמות נבואת הנחמה. ״עקיבא, ניחמתנו!״',
+      r: 'מכות כד ע״ב' },
+    { h: 'לימוד שיש בו סיום',
+      b: 'מכות היא מסכת קצרה — 24 דפים ושלושה פרקים, 46 עמודים בסך הכול. בקצב של עמוד בשבוע אפשר לסיים אותה בפחות משנה, ולהגיע אל הנחמה שבסוף.',
+      r: 'סדר נזיקין — המסכת החמישית' }
+  ];
+
+  /* ---------- עזרים ---------- */
+  const $ = (sel) => document.querySelector(sel);
+  const daf = $('#daf'), amud = $('#amud');
+  const siteInputs = [...document.querySelectorAll('input[name="dafView"]')];
+  const T = CONFIG.tractate;
+
+  const store = {
+    get(key) { try { return localStorage.getItem(key); } catch { return null; } },
+    set(key, value) { try { localStorage.setItem(key, value); } catch { /* מצב פרטי */ } },
+    del(key) { try { localStorage.removeItem(key); } catch { /* */ } }
+  };
+
+  const amudName = (side) => (side === 'a' ? 'א׳' : 'ב׳');
+  const TOTAL = (T.lastDaf - T.firstDaf + 1) * 2;
+  const indexOf = (d, s) => (d - T.firstDaf) * 2 + (s === 'a' ? 0 : 1);
+  const fromIndex = (i) => ({ daf: T.firstDaf + Math.floor(i / 2), amud: i % 2 === 0 ? 'a' : 'b' });
+
+  function hebrewNumber(n) {
+    if (n === 15) return 'ט״ו';
+    if (n === 16) return 'ט״ז';
+    const values = [[400,'ת'],[300,'ש'],[200,'ר'],[100,'ק'],[90,'צ'],[80,'פ'],[70,'ע'],[60,'ס'],[50,'נ'],[40,'מ'],[30,'ל'],[20,'כ'],[10,'י'],[9,'ט'],[8,'ח'],[7,'ז'],[6,'ו'],[5,'ה'],[4,'ד'],[3,'ג'],[2,'ב'],[1,'א']];
+    let rest = n, out = '';
+    for (const [v, l] of values) while (rest >= v) { out += l; rest -= v; }
+    return out.length === 1 ? `${out}׳` : `${out.slice(0, -1)}״${out.slice(-1)}`;
+  }
+
+  const current = () => ({ daf: Number(daf.value), amud: amud.value });
+  const currentSite = () => siteInputs.find((i) => i.checked).value;
+
+  /* ---------- מצב שמור ---------- */
+  let lastRead = null;
+  let readSet = new Set();
+
+  try {
+    const saved = JSON.parse(store.get(CONFIG.keys.lastRead) || 'null');
+    if (saved && Number.isInteger(saved.daf) && saved.daf >= T.firstDaf && saved.daf <= T.lastDaf && ['a', 'b'].includes(saved.amud)) lastRead = saved;
+  } catch { /* */ }
+  try {
+    const arr = JSON.parse(store.get(CONFIG.keys.read) || '[]');
+    if (Array.isArray(arr)) readSet = new Set(arr.filter((i) => Number.isInteger(i) && i >= 0 && i < TOTAL));
+  } catch { /* */ }
+
+  /* ---------- בניית הבחירה ---------- */
+  for (let n = T.firstDaf; n <= T.lastDaf; n += 1) {
+    const opt = document.createElement('option');
+    opt.value = n;
+    opt.textContent = `דף ${hebrewNumber(n)}`;
+    daf.append(opt);
+  }
+
+  const chaptersBox = $('#chapters');
+  CONFIG.chapters.forEach((ch, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'chip';
+    btn.dataset.index = i;
+    btn.innerHTML = `${ch.name}<small>${ch.title}</small>`;
+    btn.addEventListener('click', () => { daf.value = ch.daf; amud.value = ch.amud; update(); });
+    chaptersBox.append(btn);
+  });
+
+  function setPage(d, s) {
+    if (d < T.firstDaf || d > T.lastDaf || !['a', 'b'].includes(s)) return;
+    daf.value = String(d);
+    amud.value = s;
+  }
+
+  // סדר עדיפויות לנקודת ההתחלה: קישור (#13b) ← הדף האחרון שנפתח ← תחילת המסכת
+  const hashMatch = /^#(\d{1,2})([ab])$/.exec(location.hash);
+  if (hashMatch) setPage(Number(hashMatch[1]), hashMatch[2]);
+  else if (lastRead) setPage(lastRead.daf, lastRead.amud);
+
+  const savedSite = store.get(CONFIG.keys.site);
+  if (['sefaria', 'dafyomi'].includes(savedSite)) siteInputs.find((i) => i.value === savedSite).checked = true;
+
+  /* ---------- קישורים ---------- */
+  function buildUrl({ daf: d, amud: s }, site) {
+    if (site === 'dafyomi') {
+      const page = (d - 1) * 2 + (s === 'a' ? 1 : 2); // 2a = 3
+      return `${CONFIG.dafyomiBase}?vt=1&massechet=${T.dafyomiMassechet}&amud=${page}&fs=0`;
+    }
+    return `${CONFIG.sefariaBase}${T.sefaria}.${d}${s}`;
+  }
+
+  /* ---------- רינדור ---------- */
+  const link = $('#openLink'), ctaLabel = $('#ctaLabel'), caption = $('#linkCaption');
+  const lastReadBadge = $('#lastRead');
+  const prevBtn = $('#prevBtn'), nextBtn = $('#nextBtn');
+
+  function renderLastRead() {
+    const c = current();
+    const same = lastRead && c.daf === lastRead.daf && c.amud === lastRead.amud;
+    daf.classList.toggle('last-read-select', Boolean(same));
+    amud.classList.toggle('last-read-select', Boolean(same));
+    lastReadBadge.classList.toggle('visible', Boolean(lastRead));
+    lastReadBadge.textContent = lastRead ? `הדף האחרון שנפתח: ${hebrewNumber(lastRead.daf)} · עמוד ${amudName(lastRead.amud)}` : '';
+  }
+
+  function renderProgress() {
+    const box = $('#progress');
+    box.hidden = readSet.size === 0;
+    const pct = Math.round((readSet.size / TOTAL) * 100);
+    $('#progressText').textContent = `נפתחו ${readSet.size} מתוך ${TOTAL} עמודים במסכת`;
+    $('#barFill').style.width = `${pct}%`;
+    $('#bar').setAttribute('aria-valuenow', String(pct));
+  }
+
+  function renderChapters() {
+    const idx = indexOf(...Object.values(current()));
+    chaptersBox.querySelectorAll('.chip').forEach((chip, i) => {
+      const start = indexOf(CONFIG.chapters[i].daf, CONFIG.chapters[i].amud);
+      const next = CONFIG.chapters[i + 1] ? indexOf(CONFIG.chapters[i + 1].daf, CONFIG.chapters[i + 1].amud) : TOTAL;
+      chip.setAttribute('aria-pressed', String(idx >= start && idx < next));
+    });
+  }
+
+  function update() {
+    const c = current();
+    const site = currentSite();
+    link.href = buildUrl(c, site);
+    ctaLabel.textContent = `פתיחת דף ${hebrewNumber(c.daf)} עמוד ${amudName(c.amud)} ${site === 'dafyomi' ? 'בצורת הדף' : 'בספריא'}`;
+    caption.textContent = site === 'dafyomi' ? 'הדף ייפתח בצורת הדף בפורטל הדף היומי' : 'הדף ייפתח באתר ספריא';
+    const idx = indexOf(c.daf, c.amud);
+    prevBtn.disabled = idx === 0;
+    nextBtn.disabled = idx === TOTAL - 1;
+    history.replaceState(null, '', `#${c.daf}${c.amud}`);
+    renderLastRead();
+    renderChapters();
+    renderProgress();
+  }
+
+  /* ---------- אירועים ---------- */
+  const step = (delta) => {
+    const i = indexOf(...Object.values(current())) + delta;
+    if (i < 0 || i >= TOTAL) return;
+    const p = fromIndex(i);
+    setPage(p.daf, p.amud);
+    update();
+  };
+  prevBtn.addEventListener('click', () => step(-1));
+  nextBtn.addEventListener('click', () => step(1));
+
+  link.addEventListener('click', () => {
+    const c = current();
+    lastRead = c;
+    readSet.add(indexOf(c.daf, c.amud));
+    store.set(CONFIG.keys.lastRead, JSON.stringify(c));
+    store.set(CONFIG.keys.read, JSON.stringify([...readSet]));
+    renderLastRead();
+    renderProgress();
+  });
+
+  daf.addEventListener('change', update);
+  amud.addEventListener('change', update);
+  siteInputs.forEach((input) => input.addEventListener('change', () => { store.set(CONFIG.keys.site, input.value); update(); }));
+
+  $('#resetBtn').addEventListener('click', () => {
+    if (!confirm('לאפס את ההתקדמות ואת הדף האחרון שנפתח?')) return;
+    readSet = new Set();
+    lastRead = null;
+    store.del(CONFIG.keys.read);
+    store.del(CONFIG.keys.lastRead);
+    update();
+  });
+
+  $('#shareBtn').addEventListener('click', async () => {
+    const c = current();
+    const url = `${location.origin}${location.pathname}#${c.daf}${c.amud}`;
+    const text = `לומדים מסכת ${T.he} — דף ${hebrewNumber(c.daf)} עמוד ${amudName(c.amud)}`;
+    try {
+      if (navigator.share) { await navigator.share({ title: document.title, text, url }); return; }
+      await navigator.clipboard.writeText(url);
+      caption.textContent = 'הקישור לדף הועתק';
+    } catch { /* המשתמש ביטל */ }
+  });
+
+  /* ---------- מועד השיעור הבא ---------- */
+  const M = CONFIG.meeting;
+  function nextLesson(now = new Date()) {
+    const start = new Date(now);
+    start.setHours(M.hour, M.minute, 0, 0);
+    start.setDate(start.getDate() + ((M.weekday - start.getDay() + 7) % 7));
+    const end = new Date(start.getTime() + M.durationMin * 60000);
+    if (now > end) start.setDate(start.getDate() + 7);
+    return start;
+  }
+
+  function renderCountdown() {
+    const now = new Date();
+    const start = nextLesson(now);
+    const diff = start - now;
+    const el = $('#countdown');
+    if (diff <= 0) { el.textContent = 'הלימוד מתקיים עכשיו — מצטרפים!'; return; }
+    const days = Math.floor(diff / 864e5);
+    const hours = Math.floor((diff % 864e5) / 36e5);
+    const mins = Math.floor((diff % 36e5) / 6e4);
+    const parts = [];
+    if (days) parts.push(days === 1 ? 'יום' : `${days} ימים`);
+    if (hours) parts.push(hours === 1 ? 'שעה' : `${hours} שעות`);
+    if (!days && !hours) parts.push(`${mins} דקות`);
+    el.textContent = `השיעור הבא בעוד ${parts.join(' ו־')}`;
+  }
+
+  function renderCalendarLink() {
+    const pad = (n) => String(n).padStart(2, '0');
+    const fmt = (d) => `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}T${pad(d.getHours())}${pad(d.getMinutes())}00`;
+    const start = nextLesson();
+    const end = new Date(start.getTime() + M.durationMin * 60000);
+    const q = new URLSearchParams({
+      action: 'TEMPLATE', text: M.title, location: M.place,
+      dates: `${fmt(start)}/${fmt(end)}`, ctz: M.timezone, recur: 'RRULE:FREQ=WEEKLY;BYDAY=WE'
+    });
+    $('#calendarLink').href = `https://calendar.google.com/calendar/render?${q}`;
+  }
+
+  /* ---------- פנינים ---------- */
+  const factBox = $('.fact');
+  let factIndex = Math.floor(Date.now() / 864e5) % FACTS.length; // פנינה אחרת בכל יום
+  function renderFact(animate) {
+    const f = FACTS[factIndex];
+    $('#factHeading').textContent = f.h;
+    $('#factBody').textContent = f.b;
+    $('#factRef').textContent = f.r;
+    if (animate) { factBox.classList.remove('swap'); void factBox.offsetWidth; factBox.classList.add('swap'); }
+  }
+  $('#factBtn').addEventListener('click', () => { factIndex = (factIndex + 1) % FACTS.length; renderFact(true); });
+
+  /* ---------- הפעלה ---------- */
+  update();
+  renderFact(false);
+  renderCalendarLink();
+  renderCountdown();
+  setInterval(renderCountdown, 60000);
+})();
+
+</script>
 </body>
 </html>
